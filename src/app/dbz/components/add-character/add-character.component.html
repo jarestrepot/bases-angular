@@ -1,0 +1,20 @@
+<h3 class="text-3xl text-center font-semibold my4 text-yellow-300">Add character</h3>
+<form class="flex flex-col gap-5 w-2/3" action="" (ngSubmit)="emitCharacter()">
+  <input
+    class="bg-transparent text-gray-400 p-1 border-b-2 border-green-600 focus:outline-none" type="text"
+    placeholder="Name"
+    [(ngModel)]="character.name"
+    name="name"
+  >
+  <input
+    class="bg-transparent  text-gray-400 p-1 border-b-2 border-green-600 focus:outline-none" type="number"
+    placeholder="Power"
+    [(ngModel)]="character.power"
+    name="power"
+  >
+  <button type="submit"
+    class="border text-lg border-green-600 rounded-md p-1 text-green-600 hover:scale-105 hover:shadow hover:shadow-green-400 hover:border-none transition-all duration-300 ease-in-out">
+    Add
+  </button>
+
+</form>

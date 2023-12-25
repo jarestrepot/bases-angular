@@ -1,0 +1,16 @@
+<h1 class="text-center my-10 text-4xl text-yellow-500 font-medium">Characters DBZ</h1>
+<hr>
+
+<section class="w-full h-auto mt-6 p-6 flex flex-row justify-evenly gap-10">
+
+  <article class="w-1/2 place-items-start px-5 py-3">
+    <dbz-list (deleteCharacter)="onDeleteCharacter($event)" [characterList]="characters" class="grid grid-cols-1 gap-5 w-full"/>
+  </article>
+
+  <article class="w-1/2 py-3">
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)" class="w-full grid place-items-center gap-4" />
+  </article>
+
+</section>
+
+
