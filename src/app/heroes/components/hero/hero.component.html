@@ -1,0 +1,49 @@
+<h1 class=" text-3xl md:text-5xl font-bold text-center md:py-6">{{ name }}</h1>
+
+<dl>
+  <td>Name: </td>
+  <span (click)="activeInput()" *ngIf="!inputValue">{{ name }}</span>
+  <input
+    *ngIf="inputValue"
+    type="text"
+    [placeholder]="name"
+    class="text-black p-1 m-4 rounded"
+    [(ngModel)]="name"
+    (keydown.enter)="enterKey()"
+  >
+
+  <td>Age: </td>
+  <dd>{{ age }}</dd>
+
+  <td>Method: </td>
+  <dd>{{ getHeroDescription() }} </dd>
+
+  <td>Capitalize: </td>
+  <dd>{{ capitalizedName }}</dd>
+</dl>
+
+
+<div class="grid grid-cols-3 w-1/2 gap-3 my-2">
+  <button
+    *ngIf="name !== 'Doctor Stranger'"
+    (click)="changeNameHero('Doctor Stranger')"
+    class="bg-slate-800 p-1 text-white border hover:border-blue-400 rounded hover:scale-105 hover:text-slate-800 hover:bg-white transition-all duration-200"
+  >
+    Change name
+  </button>
+
+  <button
+    *ngIf="age !== 1000"
+    (click)="changeAgeHero(1000)"
+    class="bg-slate-800 p-1 text-white border hover:border-blue-400 rounded hover:scale-105 hover:text-slate-800 hover:bg-white transition-all duration-200"
+  >
+    Change age
+  </button>
+
+  <button
+    (click)="resetHero()"
+    *ngIf="age === 1000 && name !== 'ironman'"
+    class="bg-slate-800 p-1 text-white border hover:border-blue-400 rounded hover:scale-105 hover:text-slate-800 hover:bg-white transition-all duration-200">
+    Reset
+  </button>
+</div>

@@ -1,0 +1,25 @@
+<h3 class="text-green-500 my-4">
+  Heroes List
+</h3>
+
+<button
+  *ngIf="heroNames.length > 0"
+  (click)="removeLasthero()"
+  class="text-red-600 rounded border border-red-500 shadow-md shadow-red-400 p-2 hover:scale-105 hover:text-gray-200 hover:border-gray-200 transition-all ease-out duration-200 hover:shadow-gray-200 mb-5"
+>Delete Hero</button>
+
+<div *ngIf="deleteHero; else nothingWasDeleted">
+  <h3>Hero Deleted <small class="text-red-500 text-xl">{{ deleteHero }}</small></h3>
+</div>
+<ng-template #nothingWasDeleted>
+  <h3>Nothing</h3>
+
+</ng-template>
+
+<ul class="m-2 ">
+  <li class="underline underline-offset-4"
+    *ngFor="let hero of heroNames"
+  >
+  {{ hero }}
+</li>
+</ul>
